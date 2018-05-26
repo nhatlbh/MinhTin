@@ -1,0 +1,14 @@
+D:\1-Works\1-Own\2017\Admin\4.DTO\bin\Debug\4.DTO.dll
+D:\1-Works\1-Own\2017\Admin\4.DTO\bin\Debug\4.DTO.pdb
+D:\1-Works\1-Own\2017\Admin\4.DTO\obj\Debug\4.DTO.dll
+D:\1-Works\1-Own\2017\Admin\4.DTO\obj\Debug\4.DTO.pdb
+D:\Own\2017\Admin\4.DTO\bin\Debug\4.DTO.dll
+D:\Own\2017\Admin\4.DTO\bin\Debug\4.DTO.pdb
+D:\Own\2017\Admin\4.DTO\obj\Debug\4.DTO.dll
+D:\Own\2017\Admin\4.DTO\obj\Debug\4.DTO.pdb
+D:\Own\2017\Admin\4.DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\4.DTO\bin\Debug\4.DTO.dll
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\4.DTO\bin\Debug\4.DTO.pdb
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\4.DTO\obj\Debug\4.DTO.dll
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\4.DTO\obj\Debug\4.DTO.pdb
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\4.DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache

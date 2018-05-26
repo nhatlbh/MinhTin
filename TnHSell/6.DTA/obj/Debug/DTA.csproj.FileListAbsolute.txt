@@ -1,0 +1,14 @@
+D:\1-Works\1-Own\2017\Admin\6.DTA\bin\Debug\6.DTA.dll
+D:\1-Works\1-Own\2017\Admin\6.DTA\bin\Debug\6.DTA.pdb
+D:\1-Works\1-Own\2017\Admin\6.DTA\obj\Debug\6.DTA.dll
+D:\1-Works\1-Own\2017\Admin\6.DTA\obj\Debug\6.DTA.pdb
+D:\Own\2017\Admin\6.DTA\bin\Debug\6.DTA.dll
+D:\Own\2017\Admin\6.DTA\bin\Debug\6.DTA.pdb
+D:\Own\2017\Admin\6.DTA\obj\Debug\6.DTA.dll
+D:\Own\2017\Admin\6.DTA\obj\Debug\6.DTA.pdb
+D:\Own\2017\Admin\6.DTA\obj\Debug\DTA.csprojResolveAssemblyReference.cache
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\6.DTA\bin\Debug\6.DTA.dll
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\6.DTA\bin\Debug\6.DTA.pdb
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\6.DTA\obj\Debug\6.DTA.dll
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\6.DTA\obj\Debug\6.DTA.pdb
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\6.DTA\obj\Debug\DTA.csprojResolveAssemblyReference.cache

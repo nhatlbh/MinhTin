@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F6E6C1E5-2AC1-4D55-9721-1C4DFECF0CEE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TnHSell</RootNamespace>
+    <AssemblyName>TnHSell</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\2.BL\bin\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="MasterPage\Main.Master" />
+    <Content Include="Page\Generated\AdmRight_List.aspx" />
+    <Content Include="Page\Generated\CatGuaranteestatus_List.aspx" />
+    <Content Include="Page\Generated\CatManagementgroup_List.aspx" />
+    <Content Include="Page\Generated\CatProductgroup_List.aspx" />
+    <Content Include="Page\Generated\CatReceipttype_List.aspx" />
+    <Content Include="Page\Blank.aspx" />
+    <Content Include="Page\Override\GuarReturn_List.aspx" />
+    <Content Include="Page\Login.aspx" />
+    <Content Include="Page\Generated\AdmContext_List.aspx" />
+    <Content Include="Page\Generated\AdmMap_List.aspx" />
+    <Content Include="Page\Override\AdmRole_List.aspx" />
+    <Content Include="Page\Generated\AdmService_List.aspx" />
+    <Content Include="Page\Override\AdmUser_List.aspx" />
+    <Content Include="Page\Override\BuyGuarantee_List.aspx" />
+    <Content Include="Page\Override\BuyImportinvoice_List.aspx" />
+    <Content Include="Page\Override\BuyPo_List.aspx" />
+    <Content Include="Page\Override\BuySupplierreturn_List.aspx" />
+    <Content Include="Page\Generated\CatBranch_List.aspx" />
+    <Content Include="Page\Generated\CatChanel_List.aspx" />
+    <Content Include="Page\Generated\CatColor_List.aspx" />
+    <Content Include="Page\Generated\CatConvresult_List.aspx" />
+    <Content Include="Page\Generated\CatCustomer_List.aspx" />
+    <Content Include="Page\Generated\CatDistrict_List.aspx" />
+    <Content Include="Page\Generated\CatIocode_List.aspx" />
+    <Content Include="Page\Generated\CatManufacture_List.aspx" />
+    <Content Include="Page\Generated\CatPaymenttype_List.aspx" />
+    <Content Include="Page\Generated\CatProducttype_List.aspx" />
+    <Content Include="Page\Override\CatProduct_List.aspx" />
+    <Content Include="Page\Generated\CatProvince_List.aspx" />
+    <Content Include="Page\Override\CatSalestaff_List.aspx" />
+    <Content Include="Page\Generated\CatStoretype_List.aspx" />
+    <Content Include="Page\Generated\CatStore_List.aspx" />
+    <Content Include="Page\Generated\CatSupplier_List.aspx" />
+    <Content Include="Page\Generated\CatUnit_List.aspx" />
+    <Content Include="Page\Generated\CusConversation_List.aspx" />
+    <Content Include="Page\Override\FinMoneyslip_List.aspx" />
+    <Content Include="Page\Override\FinReceipt_List.aspx" />
+    <Content Include="Page\Override\SelInvoice_List.aspx" />
+    <Content Include="Page\Override\SelReceiveproduct_List.aspx" />
+    <Content Include="Page\Override\StoExchange_List.aspx" />
+    <Content Include="Page\Override\StoExport_List.aspx" />
+    <Content Include="Script\Generated\Form\AdmRight_Form.js" />
+    <Content Include="Script\Generated\Form\CatCode_Form.js" />
+    <Content Include="Script\Generated\Form\CatManagementgroup_Form.js" />
+    <Content Include="Script\Generated\Form\CatProductgroup_Form.js" />
+    <Content Include="Script\Generated\Form\CatProductPrice_Form.js" />
+    <Content Include="Script\Generated\Form\CatProductStore_Form.js" />
+    <Content Include="Script\Generated\Form\CatProduct_Form.js" />
+    <Content Include="Script\Generated\Form\CatSalestaff_Form.js" />
+    <Content Include="Script\Generated\Page\AdmRight_List.js" />
+    <Content Include="Script\Generated\Page\AdmRight_Page.js" />
+    <Content Include="Script\Generated\Page\CatCode_List.js" />
+    <Content Include="Script\Generated\Page\CatCode_Page.js" />
+    <Content Include="Script\Generated\Page\CatProductgroup_List.js" />
+    <Content Include="Script\Generated\Page\CatProductgroup_Page.js" />
+    <Content Include="Script\Generated\Page\CatProductPrice_List.js" />
+    <Content Include="Script\Generated\Page\CatProductPrice_Page.js" />
+    <Content Include="Script\Generated\Page\CatProductStore_List.js" />
+    <Content Include="Script\Generated\Page\CatProductStore_Page.js" />
+    <Content Include="Script\Generated\Page\CatProduct_List.js" />
+    <Content Include="Script\Generated\Page\CatProduct_Page.js" />
+    <Content Include="Script\Generated\Page\CatSalestaff_List.js" />
+    <Content Include="Script\Generated\Page\CatSalestaff_Page.js" />
+    <Content Include="Script\Override\Form\AdmContext_Form.js" />
+    <Content Include="Script\Generated\Form\AdmMap_Form.js" />
+    <Content Include="Script\Override\Form\AdmRole_Form.js" />
+    <Content Include="Script\Generated\Form\AdmService_Form.js" />
+    <Content Include="Script\Override\Form\AdmUser_Form.js" />
+    <Content Include="Script\Override\Form\BuyGuarantee_Form.js" />
+    <Content Include="Script\Override\Form\BuyImportinvoice_Form.js" />
+    <Content Include="Script\Override\Form\BuyPo_Form.js" />
+    <Content Include="Script\Override\Form\BuySupplierreturn_Form.js" />
+    <Content Include="Script\Generated\Form\CatBranch_Form.js" />
+    <Content Include="Script\Generated\Form\CatChanel_Form.js" />
+    <Content Include="Script\Generated\Form\CatColor_Form.js" />
+    <Content Include="Script\Generated\Form\CatConvresult_Form.js" />
+    <Content Include="Script\Generated\Form\CatCustomer_Form.js" />
+    <Content Include="Script\Generated\Form\CatDistrict_Form.js" />
+    <Content Include="Script\Generated\Form\CatGuaranteestatus_Form.js" />
+    <Content Include="Script\Generated\Form\CatIocode_Form.js" />
+    <Content Include="Script\Generated\Form\CatManufacture_Form.js" />
+    <Content Include="Script\Generated\Form\CatPaymenttype_Form.js" />
+    <Content Include="Script\Generated\Form\CatProducttype_Form.js" />
+    <Content Include="Script\Override\Form\CatProduct_Form.js" />
+    <Content Include="Script\Generated\Form\CatProvince_Form.js" />
+    <Content Include="Script\Generated\Form\CatReceipttype_Form.js" />
+    <Content Include="Script\Override\Form\CatSalestaff_Form.js" />
+    <Content Include="Script\Generated\Form\CatStoretype_Form.js" />
+    <Content Include="Script\Generated\Form\CatStore_Form.js" />
+    <Content Include="Script\Generated\Form\CatSupplier_Form.js" />
+    <Content Include="Script\Generated\Form\CatUnit_Form.js" />
+    <Content Include="Script\Generated\Form\CusConversation_Form.js" />
+    <Content Include="Script\Override\Form\FinImportpayment_Form.js" />
+    <Content Include="Script\Override\Form\FinMoneyslip_Form.js" />
+    <Content Include="Script\Override\Form\FinReceipt_Form.js" />
+    <Content Include="Script\Override\Form\GuarReturn_Form.js" />
+    <Content Include="Script\Override\Form\SelInvoice_Form.js" />
+    <Content Include="Script\Override\Form\SelInvoice_Form_bak.js" />
+    <Content Include="Script\Override\Form\SelReceiveproduct_Form.js" />
+    <Content Include="Script\Override\Form\StoExchange_Form.js" />
+    <Content Include="Script\Override\Form\StoExport_Form.js" />
+    <Content Include="Script\Generated\Page\AdmContext_List.js" />
+    <Content Include="Script\Generated\Page\AdmContext_Page.js" />
+    <Content Include="Script\Generated\Page\AdmMap_List.js" />
+    <Content Include="Script\Generated\Page\AdmMap_Page.js" />
+    <Content Include="Script\Override\Page\AdmRole_List.js" />
+    <Content Include="Script\Generated\Page\AdmService_List.js" />
+    <Content Include="Script\Generated\Page\AdmService_Page.js" />
+    <Content Include="Script\Override\Page\AdmUser_List.js" />
+    <Content Include="Script\Override\Page\BuyGuarantee_List.js" />
+    <Content Include="Script\Override\Page\BuyGuarantee_Page.js" />
+    <Content Include="Script\Override\Page\BuyImportinvoice_List.js" />
+    <Content Include="Script\Override\Page\BuyPo_List.js" />
+    <Content Include="Script\Override\Page\BuyPo_Page.js" />
+    <Content Include="Script\Override\Page\BuySupplierreturn_List.js" />
+    <Content Include="Script\Generated\Page\CatBranch_List.js" />
+    <Content Include="Script\Generated\Page\CatBranch_Page.js" />
+    <Content Include="Script\Generated\Page\CatChanel_List.js" />
+    <Content Include="Script\Generated\Page\CatChanel_Page.js" />
+    <Content Include="Script\Generated\Page\CatColor_List.js" />
+    <Content Include="Script\Generated\Page\CatColor_Page.js" />
+    <Content Include="Script\Generated\Page\CatConvresult_List.js" />
+    <Content Include="Script\Generated\Page\CatConvresult_Page.js" />
+    <Content Include="Script\Generated\Page\CatCustomer_List.js" />
+    <Content Include="Script\Generated\Page\CatCustomer_Page.js" />
+    <Content Include="Script\Generated\Page\CatDistrict_List.js" />
+    <Content Include="Script\Generated\Page\CatDistrict_Page.js" />
+    <Content Include="Script\Generated\Page\CatGuaranteestatus_List.js" />
+    <Content Include="Script\Generated\Page\CatGuaranteestatus_Page.js" />
+    <Content Include="Script\Generated\Page\CatIocode_List.js" />
+    <Content Include="Script\Generated\Page\CatIocode_Page.js" />
+    <Content Include="Script\Generated\Page\CatManagementgroup_List.js" />
+    <Content Include="Script\Generated\Page\CatManagementgroup_Page.js" />
+    <Content Include="Script\Generated\Page\CatManufacture_List.js" />
+    <Content Include="Script\Generated\Page\CatManufacture_Page.js" />
+    <Content Include="Script\Generated\Page\CatPaymenttype_List.js" />
+    <Content Include="Script\Generated\Page\CatPaymenttype_Page.js" />
+    <Content Include="Script\Generated\Page\CatProducttype_List.js" />
+    <Content Include="Script\Generated\Page\CatProducttype_Page.js" />
+    <Content Include="Script\Override\Page\CatProduct_List.js" />
+    <Content Include="Script\Generated\Page\CatProvince_List.js" />
+    <Content Include="Script\Generated\Page\CatProvince_Page.js" />
+    <Content Include="Script\Generated\Page\CatReceipttype_List.js" />
+    <Content Include="Script\Generated\Page\CatReceipttype_Page.js" />
+    <Content Include="Script\Override\Page\CatSalestaff_List.js" />
+    <Content Include="Script\Generated\Page\CatStoretype_List.js" />
+    <Content Include="Script\Generated\Page\CatStoretype_Page.js" />
+    <Content Include="Script\Generated\Page\CatStore_List.js" />
+    <Content Include="Script\Generated\Page\CatStore_Page.js" />
+    <Content Include="Script\Generated\Page\CatSupplier_List.js" />
+    <Content Include="Script\Generated\Page\CatSupplier_Page.js" />
+    <Content Include="Script\Generated\Page\CatUnit_List.js" />
+    <Content Include="Script\Generated\Page\CatUnit_Page.js" />
+    <Content Include="Script\Generated\Page\CusConversation_List.js" />
+    <Content Include="Script\Generated\Page\CusConversation_Page.js" />
+    <Content Include="Script\Override\Page\FinMoneyslip_List.js" />
+    <Content Include="Script\Override\Page\FinMoneyslip_Page.js" />
+    <Content Include="Script\Override\Page\FinReceipt_List.js" />
+    <Content Include="Script\Override\Page\FinReceipt_Page.js" />
+    <Content Include="Script\Override\Page\GuarReturn_List.js" />
+    <Content Include="Script\Override\Page\GuarReturn_Page.js" />
+    <Content Include="Script\Override\Page\SelInvoice_List.js" />
+    <Content Include="Script\Override\Page\SelReceiveproduct_List.js" />
+    <Content Include="Script\Override\Page\SelReceiveproduct_Page.js" />
+    <Content Include="Script\Override\Page\StoExchange_List.js" />
+    <Content Include="Script\Override\Page\StoExchange_Page.js" />
+    <Content Include="Script\Override\Page\StoExport_List.js" />
+    <Content Include="Script\Override\Page\StoExport_Page.js" />
+    <Content Include="Script\Libs\jquery.msgBox.js" />
+    <Content Include="Script\Libs\numeral.js" />
+    <Content Include="Script\Override\Page\AdmRole_Page.js" />
+    <Content Include="Script\Override\Page\AdmUser_Page.js" />
+    <Content Include="Script\Override\Page\BuyImportinvoice_Page.js" />
+    <Content Include="Script\Override\Page\BuySupplierreturn_Page.js" />
+    <Content Include="Script\Override\Page\SelInvoice_Page.js" />
+    <Content Include="Site.Mobile.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Script\cbpHorizontalMenu.min.js" />
+    <Content Include="Script\common.js" />
+    <Content Include="Script\customized_widget.js" />
+    <Content Include="Script\Libs\kendoHelpers.js" />
+    <Content Include="Script\Override\Page\CatProduct_Page.js" />
+    <Content Include="Script\Override\Page\CatSalestaff_Page.js" />
+    <Content Include="Style\FirstStyle.css" />
+    <Content Include="Style\image\close.png" />
+    <Content Include="Style\image\dollar-sign.jpg" />
+    <Content Include="Style\menu\component.css" />
+    <Content Include="Style\menu\default.css" />
+    <Content Include="Style\msgBox\msgBoxLight.css" />
+    <Content Include="UC\Common\MessageBox.ascx" />
+    <Content Include="UC\Customized\RoleRight.ascx" />
+    <Content Include="UC\Generated\AdmContext_Form.ascx" />
+    <Content Include="UC\Generated\AdmMap_Form.ascx" />
+    <Content Include="UC\Generated\AdmRight_Form.ascx" />
+    <Content Include="UC\Generated\AdmService_Form.ascx" />
+    <Content Include="UC\Override\BuyGuarantee_Form.ascx" />
+    <Content Include="UC\Generated\BuyPo_Form.ascx" />
+    <Content Include="UC\Generated\CatBranch_Form.ascx" />
+    <Content Include="UC\Generated\CatChanel_Form.ascx" />
+    <Content Include="UC\Generated\CatColor_Form.ascx" />
+    <Content Include="UC\Generated\CatConvresult_Form.ascx" />
+    <Content Include="UC\Generated\CatCustomer_Form.ascx" />
+    <Content Include="UC\Generated\CatDistrict_Form.ascx" />
+    <Content Include="UC\Generated\CatGuaranteestatus_Form.ascx" />
+    <Content Include="UC\Generated\CatIocode_Form.ascx" />
+    <Content Include="UC\Generated\CatManagementgroup_Form.ascx" />
+    <Content Include="UC\Generated\CatManufacture_Form.ascx" />
+    <Content Include="UC\Generated\CatPaymenttype_Form.ascx" />
+    <Content Include="UC\Generated\CatProductgroup_Form.ascx" />
+    <Content Include="UC\Generated\CatProductPrice_Form.ascx" />
+    <Content Include="UC\Generated\CatProductStore_Form.ascx" />
+    <Content Include="UC\Generated\CatProducttype_Form.ascx" />
+    <Content Include="UC\Generated\CatProduct_Form.ascx" />
+    <Content Include="UC\Generated\CatProvince_Form.ascx" />
+    <Content Include="UC\Generated\CatReceipttype_Form.ascx" />
+    <Content Include="UC\Generated\CatSalestaff_Form.ascx" />
+    <Content Include="UC\Generated\CatStoretype_Form.ascx" />
+    <Content Include="UC\Generated\CatStore_Form.ascx" />
+    <Content Include="UC\Generated\CatSupplier_Form.ascx" />
+    <Content Include="UC\Generated\CatUnit_Form.ascx" />
+    <Content Include="UC\Generated\CusConversation_Form.ascx" />
+    <Content Include="UC\Override\FinMoneyslip_Form.ascx" />
+    <Content Include="UC\Override\FinReceipt_Form.ascx" />
+    <Content Include="UC\Override\GuarReturn_Form.ascx" />
+    <Content Include="UC\Override\SelReceiveproduct_Form.ascx" />
+    <Content Include="UC\Override\StoExchange_Form.ascx" />
+    <Content Include="UC\Override\StoExport_Form.ascx" />
+    <Content Include="UC\Override\AdmRole_Form.ascx" />
+    <Content Include="UC\Override\AdmUser_Form.ascx" />
+    <Content Include="UC\Override\BuyImportinvoice_Form.ascx" />
+    <Content Include="UC\Override\BuySupplierreturn_Form.ascx" />
+    <Content Include="UC\Override\CatProduct_Form.ascx" />
+    <Content Include="UC\Override\CatSalestaff_Form.ascx" />
+    <Content Include="UC\Override\SelInvoice_Form.ascx" />
+    <Content Include="UC\Reusable\CheckboxTreeview.ascx" />
+    <Content Include="UC\Reusable\PaymentDetail.ascx" />
+    <Content Include="UC\Reusable\ReceiptDetail.ascx" />
+    <Content Include="UC\Reusable\SelectableGrid.ascx" />
+    <Content Include="UC\Customized\CustomerTab.ascx" />
+    <Content Include="UC\Customized\FavoriteMenu.ascx" />
+    <Content Include="UC\Customized\ProductPrice.ascx" />
+    <Content Include="UC\Customized\ImportInvoiceTab.ascx" />
+    <Content Include="UC\Reusable\InvoiceDetail.ascx" />
+    <Content Include="UC\Customized\InvoiceTab.ascx" />
+    <Content Include="UC\Common\Menu.ascx" />
+    <Content Include="UC\Customized\MoneySlipTab.ascx" />
+    <Content Include="UC\Customized\POTabs.ascx" />
+    <Content Include="UC\Customized\ReceiptTab.ascx" />
+    <Content Include="UC\Customized\ReceiveProductTab.ascx" />
+    <Content Include="UC\Customized\RelatedMenu.ascx" />
+    <Content Include="UC\Customized\SupplierReturnTab.ascx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SessionHelper.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Common\MessageBox.ascx.cs">
+      <DependentUpon>MessageBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Common\MessageBox.ascx.designer.cs">
+      <DependentUpon>MessageBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Customized\RoleRight.ascx.cs">
+      <DependentUpon>RoleRight.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Customized\RoleRight.ascx.designer.cs">
+      <DependentUpon>RoleRight.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Reusable\CheckboxTreeview.ascx.cs">
+      <DependentUpon>CheckboxTreeview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Reusable\CheckboxTreeview.ascx.designer.cs">
+      <DependentUpon>CheckboxTreeview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Reusable\PaymentDetail.ascx.cs">
+      <DependentUpon>PaymentDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Reusable\PaymentDetail.ascx.designer.cs">
+      <DependentUpon>PaymentDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Reusable\ReceiptDetail.ascx.cs">
+      <DependentUpon>ReceiptDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Reusable\ReceiptDetail.ascx.designer.cs">
+      <DependentUpon>ReceiptDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Reusable\SelectableGrid.ascx.cs">
+      <DependentUpon>SelectableGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Reusable\SelectableGrid.ascx.designer.cs">
+      <DependentUpon>SelectableGrid.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Customized\CustomerTab.ascx.cs">
+      <DependentUpon>CustomerTab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Customized\CustomerTab.ascx.designer.cs">
+      <DependentUpon>CustomerTab.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Customized\FavoriteMenu.ascx.cs">
+      <DependentUpon>FavoriteMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Customized\FavoriteMenu.ascx.designer.cs">
+      <DependentUpon>FavoriteMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Customized\ProductPrice.ascx.cs">
+      <DependentUpon>ProductPrice.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Customized\ProductPrice.ascx.designer.cs">
+      <DependentUpon>ProductPrice.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Customized\ImportInvoiceTab.ascx.cs">
+      <DependentUpon>ImportInvoiceTab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Customized\ImportInvoiceTab.ascx.designer.cs">
+      <DependentUpon>ImportInvoiceTab.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Reusable\InvoiceDetail.ascx.cs">
+      <DependentUpon>InvoiceDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Reusable\InvoiceDetail.ascx.designer.cs">
+      <DependentUpon>InvoiceDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Customized\InvoiceTab.ascx.cs">
+      <DependentUpon>InvoiceTab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Customized\InvoiceTab.ascx.designer.cs">
+      <DependentUpon>InvoiceTab.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Common\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Common\Menu.ascx.designer.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Customized\MoneySlipTab.ascx.cs">
+      <DependentUpon>MoneySlipTab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Customized\MoneySlipTab.ascx.designer.cs">
+      <DependentUpon>MoneySlipTab.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Customized\POTabs.ascx.cs">
+      <DependentUpon>POTabs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Customized\POTabs.ascx.designer.cs">
+      <DependentUpon>POTabs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Customized\ReceiptTab.ascx.cs">
+      <DependentUpon>ReceiptTab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Customized\ReceiptTab.ascx.designer.cs">
+      <DependentUpon>ReceiptTab.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Customized\ReceiveProductTab.ascx.cs">
+      <DependentUpon>ReceiveProductTab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Customized\ReceiveProductTab.ascx.designer.cs">
+      <DependentUpon>ReceiveProductTab.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Customized\RelatedMenu.ascx.cs">
+      <DependentUpon>RelatedMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Customized\RelatedMenu.ascx.designer.cs">
+      <DependentUpon>RelatedMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Customized\SupplierReturnTab.ascx.cs">
+      <DependentUpon>SupplierReturnTab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Customized\SupplierReturnTab.ascx.designer.cs">
+      <DependentUpon>SupplierReturnTab.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Style\fonts\" />
+    <Folder Include="Style\kendo\" />
+    <Folder Include="Style\msgBox\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\2.BL\BL.csproj">
+      <Project>{110745e8-6004-46ca-8499-6977998c0408}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50662</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8081/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

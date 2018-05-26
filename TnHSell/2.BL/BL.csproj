@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{110745E8-6004-46CA-8499-6977998C0408}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_2.BL</RootNamespace>
+    <AssemblyName>2.BL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Site.Mobile.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BR\BaseRule.cs" />
+    <Compile Include="BR\BRFactory.cs" />
+    <Compile Include="BR\CommonBR.cs" />
+    <Compile Include="BR\Generated\BR\AdmContextBR.cs" />
+    <Compile Include="BR\Generated\BR\AdmMapBR.cs" />
+    <Compile Include="BR\Generated\BR\AdmRightBR.cs" />
+    <Compile Include="BR\Generated\BR\AdmRoleBR.cs" />
+    <Compile Include="BR\Generated\BR\AdmRolecontextBR.cs" />
+    <Compile Include="BR\Generated\BR\AdmRoleserviceBR.cs" />
+    <Compile Include="BR\Generated\BR\AdmServiceBR.cs" />
+    <Compile Include="BR\Generated\BR\AdmUserBR.cs" />
+    <Compile Include="BR\Generated\BR\AdmUserroleBR.cs" />
+    <Compile Include="BR\Generated\BR\BuyGuaranteeBR.cs" />
+    <Compile Include="BR\Generated\BR\BuyGuaranteeDetailBR.cs" />
+    <Compile Include="BR\Generated\BR\BuyImportinvoiceBR.cs" />
+    <Compile Include="BR\Generated\BR\BuyImportinvoiceDetailBR.cs" />
+    <Compile Include="BR\Generated\BR\BuyPoBR.cs" />
+    <Compile Include="BR\Generated\BR\BuyPoDetailBR.cs" />
+    <Compile Include="BR\Generated\BR\BuySupplierreturnBR.cs" />
+    <Compile Include="BR\Generated\BR\BuySupplierreturnDetailBR.cs" />
+    <Compile Include="BR\Generated\BR\CatBranchBR.cs" />
+    <Compile Include="BR\Generated\BR\CatChanelBR.cs" />
+    <Compile Include="BR\Generated\BR\CatColorBR.cs" />
+    <Compile Include="BR\Generated\BR\CatConvresultBR.cs" />
+    <Compile Include="BR\Generated\BR\CatCustomerBR.cs" />
+    <Compile Include="BR\Generated\BR\CatDistrictBR.cs" />
+    <Compile Include="BR\Generated\BR\CatGuaranteestatusBR.cs" />
+    <Compile Include="BR\Generated\BR\CatIocodeBR.cs" />
+    <Compile Include="BR\Generated\BR\CatManagementgroupBR.cs" />
+    <Compile Include="BR\Generated\BR\CatManufactureBR.cs" />
+    <Compile Include="BR\Generated\BR\CatPaymenttypeBR.cs" />
+    <Compile Include="BR\Generated\BR\CatProductBR.cs" />
+    <Compile Include="BR\Generated\BR\CatProductgroupBR.cs" />
+    <Compile Include="BR\Generated\BR\CatProductPriceBR.cs" />
+    <Compile Include="BR\Generated\BR\CatProductStoreBR.cs" />
+    <Compile Include="BR\Generated\BR\CatProducttypeBR.cs" />
+    <Compile Include="BR\Generated\BR\CatProvinceBR.cs" />
+    <Compile Include="BR\Generated\BR\CatReceipttypeBR.cs" />
+    <Compile Include="BR\Generated\BR\CatSalestaffBR.cs" />
+    <Compile Include="BR\Generated\BR\CatStoreBR.cs" />
+    <Compile Include="BR\Generated\BR\CatStoretypeBR.cs" />
+    <Compile Include="BR\Generated\BR\CatSupplierBR.cs" />
+    <Compile Include="BR\Generated\BR\CatUnitBR.cs" />
+    <Compile Include="BR\Generated\BR\CusConversationBR.cs" />
+    <Compile Include="BR\Generated\BR\FinImportpaymentBR.cs" />
+    <Compile Include="BR\Generated\BR\FinMoneyslipBR.cs" />
+    <Compile Include="BR\Generated\BR\FinReceiptBR.cs" />
+    <Compile Include="BR\Generated\BR\FinReceivepaymentBR.cs" />
+    <Compile Include="BR\Generated\BR\FinSupplierreturnReceiptBR.cs" />
+    <Compile Include="BR\Generated\BR\GuarReturnBR.cs" />
+    <Compile Include="BR\Generated\BR\LoginSessionBR.cs" />
+    <Compile Include="BR\Generated\BR\ProducttypeCustomerBR.cs" />
+    <Compile Include="BR\Generated\BR\SelInvoiceBR.cs" />
+    <Compile Include="BR\Generated\BR\SelInvoiceDetailBR.cs" />
+    <Compile Include="BR\Generated\BR\SelInvoiceReceiptBR.cs" />
+    <Compile Include="BR\Generated\BR\SelReceiveproductBR.cs" />
+    <Compile Include="BR\Generated\BR\SelReceiveproductDetailBR.cs" />
+    <Compile Include="BR\Generated\BR\StaffMgntgroupBR.cs" />
+    <Compile Include="BR\Generated\BR\StaffProducttypeBR.cs" />
+    <Compile Include="BR\Generated\BR\StoExchangeBR.cs" />
+    <Compile Include="BR\Generated\BR\StoExchangeDetailBR.cs" />
+    <Compile Include="BR\Generated\BR\StoExportBR.cs" />
+    <Compile Include="BR\Generated\BR\StoExportDetailBR.cs" />
+    <Compile Include="BR\Generated\Rule\AdmContextRule.cs" />
+    <Compile Include="BR\Generated\Rule\AdmMapRule.cs" />
+    <Compile Include="BR\Generated\Rule\AdmRightRule.cs" />
+    <Compile Include="BR\Generated\Rule\AdmRolecontextRule.cs" />
+    <Compile Include="BR\Generated\Rule\AdmRoleRule.cs" />
+    <Compile Include="BR\Generated\Rule\AdmRoleserviceRule.cs" />
+    <Compile Include="BR\Generated\Rule\AdmServiceRule.cs" />
+    <Compile Include="BR\Generated\Rule\AdmUserroleRule.cs" />
+    <Compile Include="BR\Generated\Rule\AdmUserRule.cs" />
+    <Compile Include="BR\Generated\Rule\BuyGuaranteeDetailRule.cs" />
+    <Compile Include="BR\Generated\Rule\BuyGuaranteeRule.cs" />
+    <Compile Include="BR\Generated\Rule\BuyImportinvoiceDetailRule.cs" />
+    <Compile Include="BR\Generated\Rule\BuyImportinvoiceRule.cs" />
+    <Compile Include="BR\Generated\Rule\BuyPoDetailRule.cs" />
+    <Compile Include="BR\Generated\Rule\BuyPoRule.cs" />
+    <Compile Include="BR\Generated\Rule\BuySupplierreturnDetailRule.cs" />
+    <Compile Include="BR\Generated\Rule\BuySupplierreturnRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatBranchRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatChanelRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatColorRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatConvresultRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatCustomerRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatDistrictRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatGuaranteestatusRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatIocodeRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatManagementgroupRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatManufactureRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatPaymenttypeRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatProductgroupRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatProductPriceRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatProductRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatProductStoreRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatProducttypeRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatProvinceRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatReceipttypeRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatSalestaffRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatStoreRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatStoretypeRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatSupplierRule.cs" />
+    <Compile Include="BR\Generated\Rule\CatUnitRule.cs" />
+    <Compile Include="BR\Generated\Rule\CusConversationRule.cs" />
+    <Compile Include="BR\Generated\Rule\FinImportpaymentRule.cs" />
+    <Compile Include="BR\Generated\Rule\FinMoneyslipRule.cs" />
+    <Compile Include="BR\Generated\Rule\FinReceiptRule.cs" />
+    <Compile Include="BR\Generated\Rule\FinReceivepaymentRule.cs" />
+    <Compile Include="BR\Generated\Rule\FinSupplierreturnReceiptRule.cs" />
+    <Compile Include="BR\Generated\Rule\GuarReturnRule.cs" />
+    <Compile Include="BR\Generated\Rule\LoginSessionRule.cs" />
+    <Compile Include="BR\Generated\Rule\ProducttypeCustomerRule.cs" />
+    <Compile Include="BR\Generated\Rule\SelInvoiceDetailRule.cs" />
+    <Compile Include="BR\Generated\Rule\SelInvoiceReceiptRule.cs" />
+    <Compile Include="BR\Generated\Rule\SelInvoiceRule.cs" />
+    <Compile Include="BR\Generated\Rule\SelReceiveproductDetailRule.cs" />
+    <Compile Include="BR\Generated\Rule\SelReceiveproductRule.cs" />
+    <Compile Include="BR\Generated\Rule\StaffMgntgroupRule.cs" />
+    <Compile Include="BR\Generated\Rule\StaffProducttypeRule.cs" />
+    <Compile Include="BR\Generated\Rule\StoExchangeDetailRule.cs" />
+    <Compile Include="BR\Generated\Rule\StoExchangeRule.cs" />
+    <Compile Include="BR\Generated\Rule\StoExportDetailRule.cs" />
+    <Compile Include="BR\Generated\Rule\StoExportRule.cs" />
+    <Compile Include="BR\IBaseBR.cs" />
+    <Compile Include="BR\IBusinessRule.cs" />
+    <Compile Include="Controllers\AdmUserOvrController.cs" />
+    <Compile Include="Controllers\BuyImportinvoiceOvrController.cs" />
+    <Compile Include="Controllers\BuyGuaranteeOvrController.cs" />
+    <Compile Include="Controllers\Generated\AdmRightController.cs" />
+    <Compile Include="Controllers\Generated\GuarReturnController.cs" />
+    <Compile Include="Controllers\GuarReturnOvrController.cs" />
+    <Compile Include="Controllers\SelReceiveproductOvrController.cs" />
+    <Compile Include="Controllers\BuySupplierReturnOvrController.cs" />
+    <Compile Include="Controllers\CatProductOvrController.cs" />
+    <Compile Include="Controllers\CatSaleStaffOvrController.cs" />
+    <Compile Include="Controllers\FinMoneyslipOvrController.cs" />
+    <Compile Include="Controllers\FinReceiptOvrController.cs" />
+    <Compile Include="Controllers\Generated\AdmContextController.cs" />
+    <Compile Include="Controllers\Generated\AdmMapController.cs" />
+    <Compile Include="Controllers\Generated\AdmRolecontextController.cs" />
+    <Compile Include="Controllers\Generated\AdmRoleController.cs" />
+    <Compile Include="Controllers\Generated\AdmRoleserviceController.cs" />
+    <Compile Include="Controllers\Generated\AdmServiceController.cs" />
+    <Compile Include="Controllers\Generated\AdmUserController.cs" />
+    <Compile Include="Controllers\Generated\AdmUserroleController.cs" />
+    <Compile Include="Controllers\Generated\BuyGuaranteeController.cs" />
+    <Compile Include="Controllers\Generated\BuyGuaranteeDetailController.cs" />
+    <Compile Include="Controllers\Generated\BuyImportinvoiceController.cs" />
+    <Compile Include="Controllers\Generated\BuyImportinvoiceDetailController.cs" />
+    <Compile Include="Controllers\Generated\BuyPoController.cs" />
+    <Compile Include="Controllers\Generated\BuyPoDetailController.cs" />
+    <Compile Include="Controllers\Generated\BuySupplierreturnController.cs" />
+    <Compile Include="Controllers\Generated\BuySupplierreturnDetailController.cs" />
+    <Compile Include="Controllers\Generated\CatBranchController.cs" />
+    <Compile Include="Controllers\Generated\CatChanelController.cs" />
+    <Compile Include="Controllers\Generated\CatColorController.cs" />
+    <Compile Include="Controllers\Generated\CatConvresultController.cs" />
+    <Compile Include="Controllers\Generated\CatCustomerController.cs" />
+    <Compile Include="Controllers\Generated\CatDistrictController.cs" />
+    <Compile Include="Controllers\Generated\CatGuaranteestatusController.cs" />
+    <Compile Include="Controllers\Generated\CatIocodeController.cs" />
+    <Compile Include="Controllers\Generated\CatManagementgroupController.cs" />
+    <Compile Include="Controllers\Generated\CatManufactureController.cs" />
+    <Compile Include="Controllers\Generated\CatPaymenttypeController.cs" />
+    <Compile Include="Controllers\Generated\CatProductController.cs" />
+    <Compile Include="Controllers\Generated\CatProductgroupController.cs" />
+    <Compile Include="Controllers\Generated\CatProductPriceController.cs" />
+    <Compile Include="Controllers\Generated\CatProductStoreController.cs" />
+    <Compile Include="Controllers\Generated\CatProducttypeController.cs" />
+    <Compile Include="Controllers\Generated\CatProvinceController.cs" />
+    <Compile Include="Controllers\Generated\CatReceipttypeController.cs" />
+    <Compile Include="Controllers\Generated\CatSalestaffController.cs" />
+    <Compile Include="Controllers\Generated\CatStoreController.cs" />
+    <Compile Include="Controllers\Generated\CatStoretypeController.cs" />
+    <Compile Include="Controllers\Generated\CatSupplierController.cs" />
+    <Compile Include="Controllers\Generated\CatUnitController.cs" />
+    <Compile Include="Controllers\Generated\CusConversationController.cs" />
+    <Compile Include="Controllers\Generated\FinImportpaymentController.cs" />
+    <Compile Include="Controllers\Generated\FinMoneyslipController.cs" />
+    <Compile Include="Controllers\Generated\FinReceiptController.cs" />
+    <Compile Include="Controllers\Generated\FinReceivepaymentController.cs" />
+    <Compile Include="Controllers\Generated\FinSupplierreturnReceiptController.cs" />
+    <Compile Include="Controllers\Generated\LoginSessionController.cs" />
+    <Compile Include="Controllers\Generated\ProducttypeCustomerController.cs" />
+    <Compile Include="Controllers\Generated\SelInvoiceController.cs" />
+    <Compile Include="Controllers\Generated\SelInvoiceDetailController.cs" />
+    <Compile Include="Controllers\Generated\SelInvoiceReceiptController.cs" />
+    <Compile Include="Controllers\Generated\SelReceiveproductController.cs" />
+    <Compile Include="Controllers\Generated\SelReceiveproductDetailController.cs" />
+    <Compile Include="Controllers\Generated\StaffMgntgroupController.cs" />
+    <Compile Include="Controllers\Generated\StaffProducttypeController.cs" />
+    <Compile Include="Controllers\Generated\StoExchangeController.cs" />
+    <Compile Include="Controllers\Generated\StoExchangeDetailController.cs" />
+    <Compile Include="Controllers\Generated\StoExportController.cs" />
+    <Compile Include="Controllers\Generated\StoExportDetailController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SelInvoiceOvrController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
+    <Compile Include="Controllers\StoExchangeOvrController.cs" />
+    <Compile Include="Controllers\StoExportOvrController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\TreeDataController.cs" />
+    <Compile Include="DFR\AdmContextDFR.cs" />
+    <Compile Include="DFR\AdmMapDFR.cs" />
+    <Compile Include="DFR\AdmRightDFR.cs" />
+    <Compile Include="DFR\AdmRolecontextDFR.cs" />
+    <Compile Include="DFR\AdmRoleDFR.cs" />
+    <Compile Include="DFR\AdmRoleserviceDFR.cs" />
+    <Compile Include="DFR\AdmServiceDFR.cs" />
+    <Compile Include="DFR\AdmUserDFR.cs" />
+    <Compile Include="DFR\AdmUserroleDFR.cs" />
+    <Compile Include="DFR\BuyGuaranteeDetailDFR.cs" />
+    <Compile Include="DFR\BuyGuaranteeDFR.cs" />
+    <Compile Include="DFR\BuyImportinvoiceDetailDFR.cs" />
+    <Compile Include="DFR\BuyImportinvoiceDFR.cs" />
+    <Compile Include="DFR\BuyPoDetailDFR.cs" />
+    <Compile Include="DFR\BuyPoDFR.cs" />
+    <Compile Include="DFR\BuySupplierreturnDetailDFR.cs" />
+    <Compile Include="DFR\BuySupplierreturnDFR.cs" />
+    <Compile Include="DFR\CatBranchDFR.cs" />
+    <Compile Include="DFR\CatChanelDFR.cs" />
+    <Compile Include="DFR\CatColorDFR.cs" />
+    <Compile Include="DFR\CatConvresultDFR.cs" />
+    <Compile Include="DFR\CatCustomerDFR.cs" />
+    <Compile Include="DFR\CatDistrictDFR.cs" />
+    <Compile Include="DFR\CatGuaranteestatusDFR.cs" />
+    <Compile Include="DFR\CatIocodeDFR.cs" />
+    <Compile Include="DFR\CatManagementgroupDFR.cs" />
+    <Compile Include="DFR\CatManufactureDFR.cs" />
+    <Compile Include="DFR\CatPaymenttypeDFR.cs" />
+    <Compile Include="DFR\CatProductDFR.cs" />
+    <Compile Include="DFR\CatProductgroupDFR.cs" />
+    <Compile Include="DFR\CatProductPriceDFR.cs" />
+    <Compile Include="DFR\CatProductStoreDFR.cs" />
+    <Compile Include="DFR\CatProducttypeDFR.cs" />
+    <Compile Include="DFR\CatProvinceDFR.cs" />
+    <Compile Include="DFR\CatReceipttypeDFR.cs" />
+    <Compile Include="DFR\CatSalestaffDFR.cs" />
+    <Compile Include="DFR\CatStoreDFR.cs" />
+    <Compile Include="DFR\CatStoretypeDFR.cs" />
+    <Compile Include="DFR\CatSupplierDFR.cs" />
+    <Compile Include="DFR\CatUnitDFR.cs" />
+    <Compile Include="DFR\CusConversationDFR.cs" />
+    <Compile Include="DFR\FinImportpaymentDFR.cs" />
+    <Compile Include="DFR\FinMoneyslipDFR.cs" />
+    <Compile Include="DFR\FinReceiptDFR.cs" />
+    <Compile Include="DFR\FinReceivepaymentDFR.cs" />
+    <Compile Include="DFR\FinSupplierreturnReceiptDFR.cs" />
+    <Compile Include="DFR\GuarReturnDFR.cs" />
+    <Compile Include="DFR\LoginSessionDFR.cs" />
+    <Compile Include="DFR\ProducttypeCustomerDFR.cs" />
+    <Compile Include="DFR\SelInvoiceDetailDFR.cs" />
+    <Compile Include="DFR\SelInvoiceDFR.cs" />
+    <Compile Include="DFR\SelInvoiceReceiptDFR.cs" />
+    <Compile Include="DFR\SelReceiveproductDetailDFR.cs" />
+    <Compile Include="DFR\SelReceiveproductDFR.cs" />
+    <Compile Include="DFR\StaffMgntgroupDFR.cs" />
+    <Compile Include="DFR\StaffProducttypeDFR.cs" />
+    <Compile Include="DFR\StoExchangeDetailDFR.cs" />
+    <Compile Include="DFR\StoExchangeDFR.cs" />
+    <Compile Include="DFR\StoExportDetailDFR.cs" />
+    <Compile Include="DFR\StoExportDFR.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CodeModel.cs" />
+    <Compile Include="Model\AuthModel.cs" />
+    <Compile Include="Model\StoreModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\3.DT\DT.csproj">
+      <Project>{cd7a5b30-376f-40b0-92b6-5547cc3b6c7c}</Project>
+      <Name>DT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\4.DTO\DTO.csproj">
+      <Project>{b370b07d-2ed4-4da1-a02d-3fb771f29bc9}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\5.Util\Util.csproj">
+      <Project>{fd98cda9-1f1c-4023-9224-43a5c01dbe62}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\6.DTA\DTA.csproj">
+      <Project>{a8f9235a-c629-4fc2-b53f-70e239abf716}</Project>
+      <Name>DTA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58949</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58949/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

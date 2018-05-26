@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B370B07D-2ED4-4DA1-A02D-3FB771F29BC9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_4.DTO</RootNamespace>
+    <AssemblyName>4.DTO</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthInfo.cs" />
+    <Compile Include="Generated\AdmContext.cs" />
+    <Compile Include="Generated\AdmMap.cs" />
+    <Compile Include="Generated\AdmRight.cs" />
+    <Compile Include="Generated\AdmRole.cs" />
+    <Compile Include="Generated\AdmRolecontext.cs" />
+    <Compile Include="Generated\AdmRoleRight.cs" />
+    <Compile Include="Generated\AdmRoleservice.cs" />
+    <Compile Include="Generated\AdmService.cs" />
+    <Compile Include="Generated\AdmUser.cs" />
+    <Compile Include="Generated\AdmUserrole.cs" />
+    <Compile Include="Generated\BuyGuarantee.cs" />
+    <Compile Include="Generated\BuyGuaranteeDetail.cs" />
+    <Compile Include="Generated\BuyImportinvoice.cs" />
+    <Compile Include="Generated\BuyImportinvoiceDetail.cs" />
+    <Compile Include="Generated\BuyPo.cs" />
+    <Compile Include="Generated\BuyPoDetail.cs" />
+    <Compile Include="Generated\BuySupplierreturn.cs" />
+    <Compile Include="Generated\BuySupplierreturnDetail.cs" />
+    <Compile Include="Generated\CatBranch.cs" />
+    <Compile Include="Generated\CatChanel.cs" />
+    <Compile Include="Generated\CatCode.cs" />
+    <Compile Include="Generated\CatColor.cs" />
+    <Compile Include="Generated\CatConvresult.cs" />
+    <Compile Include="Generated\CatCustomer.cs" />
+    <Compile Include="Generated\CatDistrict.cs" />
+    <Compile Include="Generated\CatGuaranteestatus.cs" />
+    <Compile Include="Generated\CatIocode.cs" />
+    <Compile Include="Generated\CatManagementgroup.cs" />
+    <Compile Include="Generated\CatManufacture.cs" />
+    <Compile Include="Generated\CatPaymenttype.cs" />
+    <Compile Include="Generated\CatProduct.cs" />
+    <Compile Include="Generated\CatProductgroup.cs" />
+    <Compile Include="Generated\CatProductPrice.cs" />
+    <Compile Include="Generated\CatProductStore.cs" />
+    <Compile Include="Generated\CatProducttype.cs" />
+    <Compile Include="Generated\CatProvince.cs" />
+    <Compile Include="Generated\CatReceipttype.cs" />
+    <Compile Include="Generated\CatSalestaff.cs" />
+    <Compile Include="Generated\CatStore.cs" />
+    <Compile Include="Generated\CatStoretype.cs" />
+    <Compile Include="Generated\CatSupplier.cs" />
+    <Compile Include="Generated\CatUnit.cs" />
+    <Compile Include="Generated\CusConversation.cs" />
+    <Compile Include="Generated\FinImportpayment.cs" />
+    <Compile Include="Generated\FinMoneyslip.cs" />
+    <Compile Include="Generated\FinReceipt.cs" />
+    <Compile Include="Generated\FinReceivepayment.cs" />
+    <Compile Include="Generated\FinSupplierreturnReceipt.cs" />
+    <Compile Include="Generated\GuarReturn.cs" />
+    <Compile Include="Generated\GuarReturnDetail.cs" />
+    <Compile Include="Generated\LoginSession.cs" />
+    <Compile Include="Generated\LogProductexport.cs" />
+    <Compile Include="Generated\ProducttypeCustomer.cs" />
+    <Compile Include="Generated\SelInvoice.cs" />
+    <Compile Include="Generated\SelInvoiceDetail.cs" />
+    <Compile Include="Generated\SelInvoiceReceipt.cs" />
+    <Compile Include="Generated\SelReceiveproduct.cs" />
+    <Compile Include="Generated\SelReceiveproductDetail.cs" />
+    <Compile Include="Generated\StaffMgntgroup.cs" />
+    <Compile Include="Generated\StaffProducttype.cs" />
+    <Compile Include="Generated\StoExchange.cs" />
+    <Compile Include="Generated\StoExchangeDetail.cs" />
+    <Compile Include="Generated\StoExport.cs" />
+    <Compile Include="Generated\StoExportDetail.cs" />
+    <Compile Include="KendoTreeNode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

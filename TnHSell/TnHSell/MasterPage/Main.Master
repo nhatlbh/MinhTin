@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="UI.Main" %>
+
+<%@ Register Src="~/UC/Common/Menu.ascx" TagPrefix="uc1" TagName="Menu" %>
+<%@ Register Src="~/UC/Common/MessageBox.ascx" TagPrefix="uc1" TagName="MessageBox" %>
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="~/Style/FirstStyle.css" />
+    <link rel="stylesheet" href="~/Style/bootstrap.min.css" />
+     <link rel="stylesheet" href="~/Style/kendo/kendo.common.min.css" />
+    <link rel="stylesheet" href="~/Style/kendo/kendo.dataviz.min.css" />
+    <link rel="stylesheet" href="~/Style/kendo/kendo.default.min.css" />
+    <link rel="stylesheet" href="~/Style/kendo/kendo.rtl.min.css" />
+    <link rel="icon" href="../Style/image/dollar-sign.jpg" />
+
+
+    <script type="text/javascript" src="../../Script/Libs/jquery.js"></script>
+    <script type="text/javascript" src="../../Script/Libs/numeral.js"></script>
+    <script type="text/javascript" src="../../Script/Libs/kendo.all.js"></script>
+    <script type="text/javascript" src="../../Script/Libs/kendo.calendar.js"></script>
+
+    <script type="text/javascript" src="../../Script/Libs/kendoHelpers.js"></script>
+    <script type="text/javascript" src="../../Script/common.js"></script>
+    <script type="text/javascript" src="../../Script/customized_widget.js"></script>
+    <script type="text/javascript" src="../../Script/validator.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <script type="text/javascript">
+        var staffInfo;
+        $(function () {
+            var sessionKey = $('#hdfSessionKey').val();
+            callService('Session/UserInfo?sessionKey=' + sessionKey, function (data) {
+                data = JSON.parse(data);
+                staffInfo = {
+                    Id: data[0].ID,
+                    Name: data[0].Name,
+                }
+            })
+        });
+    </script>
+    <form id="form1" runat="server">
+           <uc1:MessageBox runat="server" id="MessageBox" /> 
+            <div>
+            <div class="container">
+                <uc1:Menu runat="server" ID="Menu" />
+                <div class="row">
+                    <%--                    <div class="col-md-3">
+                        <div class="row">
+                            <uc1:FavoriteMenu runat="server" ID="FavoriteMenu" />
+                        </div>
+                        <div class="row">
+                            <uc1:RelatedMenu runat="server" ID="RelatedMenu" />
+                        </div>
+                    </div>--%>
+                    <div class="col-md-12 content">
+                        <asp:ContentPlaceHolder ID="Content" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="hdfSessionKey" value="<%=UI.SessionHelper.SessionKey%>" />
+    </form>
+</body>
+</html>

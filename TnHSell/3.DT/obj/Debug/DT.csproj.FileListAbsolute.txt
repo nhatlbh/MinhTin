@@ -1,0 +1,33 @@
+D:\1-Works\1-Own\2017\Admin\3.DT\bin\Debug\3.DT.dll
+D:\1-Works\1-Own\2017\Admin\3.DT\bin\Debug\3.DT.pdb
+D:\1-Works\1-Own\2017\Admin\3.DT\bin\Debug\4.DTO.dll
+D:\1-Works\1-Own\2017\Admin\3.DT\bin\Debug\5.Util.dll
+D:\1-Works\1-Own\2017\Admin\3.DT\bin\Debug\6.DTA.dll
+D:\1-Works\1-Own\2017\Admin\3.DT\bin\Debug\4.DTO.pdb
+D:\1-Works\1-Own\2017\Admin\3.DT\bin\Debug\5.Util.pdb
+D:\1-Works\1-Own\2017\Admin\3.DT\bin\Debug\6.DTA.pdb
+D:\1-Works\1-Own\2017\Admin\3.DT\obj\Debug\DT.csprojResolveAssemblyReference.cache
+D:\1-Works\1-Own\2017\Admin\3.DT\obj\Debug\3.DT.dll
+D:\1-Works\1-Own\2017\Admin\3.DT\obj\Debug\3.DT.pdb
+D:\Own\2017\Admin\3.DT\bin\Debug\3.DT.dll
+D:\Own\2017\Admin\3.DT\bin\Debug\3.DT.pdb
+D:\Own\2017\Admin\3.DT\bin\Debug\4.DTO.dll
+D:\Own\2017\Admin\3.DT\bin\Debug\5.Util.dll
+D:\Own\2017\Admin\3.DT\bin\Debug\6.DTA.dll
+D:\Own\2017\Admin\3.DT\bin\Debug\4.DTO.pdb
+D:\Own\2017\Admin\3.DT\bin\Debug\5.Util.pdb
+D:\Own\2017\Admin\3.DT\bin\Debug\6.DTA.pdb
+D:\Own\2017\Admin\3.DT\obj\Debug\DT.csprojResolveAssemblyReference.cache
+D:\Own\2017\Admin\3.DT\obj\Debug\3.DT.dll
+D:\Own\2017\Admin\3.DT\obj\Debug\3.DT.pdb
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\3.DT\bin\Debug\3.DT.dll
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\3.DT\bin\Debug\3.DT.pdb
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\3.DT\bin\Debug\4.DTO.dll
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\3.DT\bin\Debug\5.Util.dll
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\3.DT\bin\Debug\6.DTA.dll
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\3.DT\bin\Debug\4.DTO.pdb
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\3.DT\bin\Debug\5.Util.pdb
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\3.DT\bin\Debug\6.DTA.pdb
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\3.DT\obj\Debug\DT.csprojResolveAssemblyReference.cache
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\3.DT\obj\Debug\3.DT.dll
+D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\3.DT\obj\Debug\3.DT.pdb

@@ -1,0 +1,220 @@
+﻿body {
+    font-size: 12pt;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+}
+
+.label {
+    float: left;
+    text-align: left !important;
+    margin: 10px 0 0 5px;
+    color: black !important;
+    font-weight: 600 !important;
+}
+
+.input {
+    float: left;
+    margin-top: 5px;
+}
+
+    .input input, textarea {
+        width: 100%;
+    }
+
+.error {
+    border: 1px solid red;
+}
+
+#search {
+    margin-bottom: 5px;
+    padding: 10px 0px 5px 30px;
+}
+
+#input {
+    margin-top: 30px;
+    margin-bottom: 90px;
+    margin-left: 10px;
+    padding-bottom: 30px;
+    position: absolute;
+    top: 0px;
+    border: solid 1px #bdbdbd;
+    border-radius: 3px;
+    z-index: 100 !important;
+    background-color: #fafafa;
+    border-collapse: collapse;
+}
+
+#popup {
+    margin-top: 30px;
+}
+
+.no-margin {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.required {
+    font-weight: bold;
+    color: red;
+}
+
+    .required:after {
+        content: " *";
+        color: red;
+    }
+
+.invoice-detail {
+    margin: 30px 0 20px 20px;
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 20px;
+    border-color: #cdcdcd;
+}
+
+.title {
+    height: 40px;
+    background-color: #2980B9;
+    margin-bottom: 10px;
+    font-size: 18pt;
+    padding: 2px 0px 0px 20px;
+    color: #fff;
+}
+
+.grid-title {
+    background-color: #2980B9;
+    padding: 5px 0 5px 15px;
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.conversation {
+    background-color: #BED9DE;
+    padding: 15px;
+    border: 1px solid #D1D5D8;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+    .conversation .row {
+        border-bottom: 1px dotted;
+    }
+
+.conversation-form {
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+    .conversation-form .row {
+        margin-top: 5px;
+    }
+
+.radio-button {
+    padding-left: 0px !important;
+    padding-right: 23px !important;
+}
+.nopadding {
+    padding:0px !important;
+}
+/*---------Menu----------*/
+.left-menu-title {
+    height: 35px;
+    vertical-align: middle;
+    background-color: #34495E;
+    margin-top: 10px;
+    padding: 5px 0px 5px 10px;
+    font-size: 14pt;
+    color: #fff;
+    font-weight: 500;
+}
+
+.left-menu-content {
+    height: 300px;
+    overflow: scroll;
+}
+/*---------End Menu-------*/
+/*--------- Button ---------*/
+#btnSave:hover {
+    background: url(../../Style/image/save.png) no-repeat left center;
+    background-position: 2px 7px;
+    background-size: 13px;
+    padding-left: 20px;
+    font-weight: bold;
+    color: #2980B9;
+}
+
+#btnNew:hover {
+    background: url(../../Style/image/add-new.png) no-repeat left center;
+    background-position: 2px 7px;
+    background-size: 13px;
+    padding-left: 20px;
+    font-weight: bold;
+    color: #2980B9;
+}
+
+#btnSaveAndClose:hover {
+    background: url(../../Style/image/save-and-close.png) no-repeat left center;
+    background-position: 2px 7px;
+    background-size: 13px;
+    padding-left: 20px;
+    font-weight: bold;
+    color: #2980B9;
+}
+
+#btnDelete:hover {
+    background: url(../../Style/image/delete.png) no-repeat left center;
+    background-position: 2px 7px;
+    background-size: 13px;
+    padding-left: 20px;
+    font-weight: bold;
+    color: #2980B9;
+}
+
+#btnClose:hover {
+    background: url(../../Style/image/close.png) no-repeat left center;
+    background-position: 2px 7px;
+    background-size: 13px;
+    padding-left: 20px;
+    font-weight: bold;
+    color: #2980B9;
+}
+
+.btn-seperator {
+    padding-bottom: 10px;
+    border-bottom: 1px solid;
+    border-collapse: collapse;
+    border-color: #077fad;
+}
+
+/*********************** KENDO OVERRIDE ****************/
+#grid .k-grid-header-wrap > table, /* header table */
+#grid .k-grid-content table, /* data table, no virtual scrolling */
+#grid .k-virtual-scrollable-wrap table /* data table, with virtual scrolling */ {
+    min-width: 1600px;
+}
+
+#input .k-combobox {
+    min-width: 75%;
+}
+
+.k-header {
+    font-weight: 500 !important;
+}
+
+.k-animation-container {
+    /* top:0px !important;*/
+}
+/****************************************************/
+
+/**************************BOOSTRAP OVERRIDE*****************************/
+.row {
+    margin-top: 5px;
+}
