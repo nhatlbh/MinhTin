@@ -382,6 +382,7 @@
     </Compile>
     <Compile Include="Model\CodeModel.cs" />
     <Compile Include="Model\AuthModel.cs" />
+    <Compile Include="Model\InvoiceFilterModel.cs" />
     <Compile Include="Model\StoreModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />

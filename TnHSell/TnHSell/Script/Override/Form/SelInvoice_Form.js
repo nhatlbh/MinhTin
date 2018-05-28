@@ -3,12 +3,13 @@
 
 var selinvoiceForm = (function () {
     var seviceName = 'SelInvoice';
-    var sessionKey = $('#hdfSessionKey').val();
+    var sessionKey;
     var initFormControl = function initFormControl(setting) {
+        sessionKey = $('#hdfSessionKey').val();
         numberOnly($('#hdfId'))
         callService('CatSalestaff/GetComboboxData?sessionKey=' + sessionKey, loadCombobox, ['ddlSalestaffid']);
         callService('CatStore/GetComboboxData?sessionKey=' + sessionKey, loadCombobox, ['ddlStoreid', setting.storeChanged]);
-        callService('CatCustomer/GetComboboxData?sessionKey=' + sessionKey, loadCombobox, ['ddlCustomerid',setting.customerChanged]);
+        callService('CatCustomer/GetComboboxData?sessionKey=' + sessionKey, loadCombobox, ['ddlCustomerid', setting.customerChanged]);
         callService('CatIocode/GetComboboxData?sessionKey=' + sessionKey, loadCombobox, ['ddlIocodeid', setting.ioCodeChanged]);
         $('#dedIncomedate').kendoDatePicker({
             format: '{0:dd/MM/yyyy}',

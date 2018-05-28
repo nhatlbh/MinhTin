@@ -12,3 +12,7 @@ D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\5.Util\bin\Debug\5.Util.pdb
 D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\5.Util\obj\Debug\5.Util.dll
 D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\5.Util\obj\Debug\5.Util.pdb
 D:\Own\TnH\2017\TnHSell MinhTin\Source\TnHSell\5.Util\obj\Debug\Util.csprojResolveAssemblyReference.cache
+D:\Own\TnH\2017\TnHSell MinhTin\GitRepo\TnHSell\5.Util\bin\Debug\5.Util.dll
+D:\Own\TnH\2017\TnHSell MinhTin\GitRepo\TnHSell\5.Util\bin\Debug\5.Util.pdb
+D:\Own\TnH\2017\TnHSell MinhTin\GitRepo\TnHSell\5.Util\obj\Debug\5.Util.dll
+D:\Own\TnH\2017\TnHSell MinhTin\GitRepo\TnHSell\5.Util\obj\Debug\5.Util.pdb
