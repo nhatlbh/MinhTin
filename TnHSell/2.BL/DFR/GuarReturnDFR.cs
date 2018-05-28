@@ -1,5 +1,6 @@
 ﻿
 using TnHSell.DTContract;
+using TnHSell.Model;
 
 namespace TnHSell.DFR
 {
@@ -9,6 +10,7 @@ namespace TnHSell.DFR
         {
             //cond = cond == string.Empty ? "" : " AND ";
             //cond +=  CatSalestaffContract.Columns[(int)CatSalestaffColumns.ID] + " = 1 ";
+            cond = InvoiceFilterModel.getFilterCond(cond, sessionKey);
             order = "OrderNum DESC, Id DESC";
             return cond;
         }
@@ -17,6 +19,7 @@ namespace TnHSell.DFR
         {
             //cond = cond == string.Empty ? "" : cond + " AND ";
             //cond += cond + CatSalestaffContract.Columns[(int)CatSalestaffColumns.ID] + " = 1 ";
+            cond = InvoiceFilterModel.getFilterCond(cond, sessionKey);
             columns = "ID, Code";
             order = "OrderNum DESC";
             return cond;
