@@ -51,7 +51,7 @@ namespace TnHSell.Controllers
                     {
                         invoiceDetailDTO.Receiveproductid = Converter.ToInt32(recvProductId);
                         rvcProductDetailDT.Insert(invoiceDetailDTO, tran);
-                        StoreModel.Return(recvProductDTO,invoiceDetailDTO, tran);
+                        StoreModel.ReceiveProduct(recvProductDTO,invoiceDetailDTO, tran);
                     }
                 }
                 DataProvider.CommitTrans(tran);

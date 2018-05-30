@@ -34,6 +34,7 @@ namespace TnHSell.Controllers
                 if (invoiceDTO.Id > 0)
                 {
                     invoiceId = invoiceDT.Update(invoiceDTO, tran);
+                    changeDetail(invoiceDTO.Id, invoiceDTO.Code, (int)invoiceDTO.Storeid, invoiceDetailDTOs, tran);
                 }
                 else
                 {
@@ -45,6 +46,7 @@ namespace TnHSell.Controllers
                 }
                 if (Converter.ToInt32(invoiceId) > 0)
                 {
+                    invoiceDetailDT.DeleteViaCond("InvoiceId=" + invoiceId);
                     foreach (SelInvoiceDetailContract invoiceDetailDTO in invoiceDetailDTOs)
                     {
                         invoiceDetailDTO.Invoiceid = Converter.ToInt32(invoiceId);
@@ -66,7 +68,6 @@ namespace TnHSell.Controllers
             }
             return Request.CreateResponse<string>(HttpStatusCode.OK, errMessage != string.Empty ? errMessage : invoiceId);
         }
-
         [Route("SelInvoiceOvr/GetDetail")]
         [HttpGet, HttpPost]
         public HttpResponseMessage GetDetail(string invoiceId)
@@ -128,6 +129,49 @@ namespace TnHSell.Controllers
             }
         }
 
+        [Route("SelInvoiceOvr/Delete")]
+        [HttpGet, HttpPost]
+        public HttpResponseMessage Delete(string id)
+        {
+            SqlTransaction tran = DataProvider.beginTrans();
+            try
+            {
+                string message = id;
+                FinReceiptDT receiptDT = new FinReceiptDT();
+                DataTable dtReceipt = receiptDT.GetByCond("InvoiceId=" + id);
+                if (dtReceipt.Rows.Count > 0)
+                {
+                    message = "Lỗi: Phiếu bán hàng đã thu tiền, không thể xóa.";
+                }
+                else
+                {
+                    DataTable dtInvoice = invoiceDT.GetByID(id);
+                    DataTable invoiceDetail = invoiceDetailDT.GetByCond("InvoiceId=" + id);
+                    foreach (DataRow row in invoiceDetail.Rows)
+                    {
+                        string invCode = dtInvoice.Rows[0]["Code"].ToString();
+                        int storeId = Converter.ToInt32(dtInvoice.Rows[0]["StoreId"]);
+                        int productId = Converter.ToInt32(row["ProductId"]);
+                        string quantity = row["ProductId"].ToString();
+                        StoreModel.ChangeInvoice(invCode, storeId, productId, quantity, tran);
+                        invoiceDetailDT.DeleteViaCond("InvoiceId=" + id, tran);
+                        invoiceDT.Delete(id, tran);
+                        tran.Commit();
+                    }
+                }
+                return Request.CreateResponse<string>(HttpStatusCode.OK, message);
+            }
+            catch (Exception e)
+            {
+                ExceptionHandler.Log(e);
+                tran.Rollback();
+                return Request.CreateResponse<string>(HttpStatusCode.OK, "");
+            }
+            finally {
+                tran.Dispose();
+            }
+        }
+
         HttpResponseMessage handleBRFailed(string message, SqlTransaction tran)
         {
             try
@@ -140,6 +184,19 @@ namespace TnHSell.Controllers
                 ExceptionHandler.Log(e);
                 return null;
             }
+        }
+        void changeDetail(int invoiceId, string invoiceCode, int storeId, SelInvoiceDetailContract[] invoiceDetailDTOs, SqlTransaction tran)
+        {
+           DataTable dtOldInvDetail = invoiceDetailDT.GetByCond("InvoiceId=" + invoiceId);
+            foreach (SelInvoiceDetailContract invDetail in invoiceDetailDTOs)
+            {
+                DataRow[] oldDetail = dtOldInvDetail.Select("ProductId=" + invDetail.Productid);
+                int quantity = Converter.ToInt32(oldDetail[0]["Quantity"]) - Converter.ToInt32(invDetail.Quantity);
+                if (quantity > 0)
+                {
+                    StoreModel.ChangeInvoice(invoiceCode, storeId, (int)invDetail.Productid, quantity.ToString(), tran);
+                } 
+            }                        
         }
     }
 }

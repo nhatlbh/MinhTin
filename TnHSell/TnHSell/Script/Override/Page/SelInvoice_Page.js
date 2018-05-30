@@ -28,16 +28,19 @@ $(document).ready(function () {
         devSelInvoiceList.openForm();
         sellInvDetail.clearForm();
         enableForm();
+        if ($.inArray("4", userInfo.rights) >= 0)
+            disableControlArr([$('#txtCode'), $('#txtTotal'), $('#dedCreatedate'), $('#txtTotaldebt')]);
+        else
+            disableControlArr([$('#txtCode'), $('#txtTotal'), $('#dedCreatedate'), $('#btnDelete'), $('#txtTotaldebt')]);
     });
     sellInvDetail.init(invDetailSetting);
     if (devSelInvoiceList.getGrid())
         kendoHelpers.grid.eventRowDoubleClick(devSelInvoiceList.getGrid(), function (dataItem) {
             var formId = devSelInvoiceList.getFormId();
             devSelInvoiceList.openForm(formId);
-            sellInvDetail.bindGrid("SelInvoiceOvr/GetDetail?invoiceId=" + formId);
+            sellInvDetail.bindGrid("SelInvoiceOvr/GetDetail?invoiceId=" + formId,null, ($.inArray("4", userInfo.rights) >= 0));
             disableForm();
         });
-    disableControlArr([$('#txtCode'), $('#txtTotal'), $('#dedCreatedate'), $('#btnDelete'), $('#txtTotaldebt')])
 });
 
 // Generated Initiate Form Script
@@ -52,8 +55,8 @@ $(document).ready(function () {
     formSetting = { 'storeChanged': storeChanged, 'ioCodeChanged': ioCodeChanged, 'customerChanged': customerChanged };
     devSelInvoiceForm.initFormControl(formSetting);
     $('#btnSave').click(function () { saveSellInvoice(); });
-    $('#btnDelete').click(function () { devSelInvoiceForm.del(selinvoiceList.closeForm); });
-    $('#btnNew').click(function () { devSelInvoiceForm.refreshInputForm(); sellInvDetail.clearForm(); enableForm();});
+    $('#btnDelete').click(function () { del(selinvoiceList.closeForm); });
+    $('#btnNew').click(function () { devSelInvoiceForm.refreshInputForm(); sellInvDetail.clearForm(); enableForm(); });
     $('#btnSaveAndClose').click(function () { saveSellInvoice(selinvoiceList.closeForm); });
     $('#btnClose').click(function () { selinvoiceList.closeForm(); });
 
@@ -88,7 +91,23 @@ function saveSellInvoice(ftnAfterSave) {
         });
     }
 }
-
+function del(fnAfterDel) {
+    var id = $('#hdfId').val();
+    if (id == '' || id == '0') {
+        alert('Chưa chọn Phiếu bán hàng cần xóa');
+    }
+    else if (confirm("Bạn có muốn xóa Phiếu bán hàng này?")) {
+        callService('SelInvoiceOvr/Delete?id=' + id, function (data) {
+            if (data.indexOf("Lỗi:") > -1) {
+                alert('Xóa thành công.');
+                ftnAfterDelete();
+            }
+            else {
+                alert(data);
+            }
+        })
+    }
+}
 function storeChanged() {
     storeId = $('#ddlStoreid').data('kendoComboBox').value();
     if (storeId && storeId > 0) {
@@ -133,8 +152,9 @@ function detailChanged() {
 
 
 function disableForm() {
-    disableControlArr([$('#txtDeliveryaddress'), $('#txtFinancefilenum'),
-                       $('#txtFilenum'), $('#txtReceiptnum'), $('#txtTotal'), $('#btnSaveAndClose'), $('#btnSave'), ]);
+    if ($.inArray("4", userInfo.rights) <= 0)
+        disableControlArr([$('#txtDeliveryaddress'), $('#txtFinancefilenum'),
+                           $('#txtFilenum'), $('#txtReceiptnum'), $('#txtTotal'), $('#btnSaveAndClose'), $('#btnSave'), ]);
     $('#ddlStoreid').data("kendoComboBox").enable(false);
     $('#ddlCustomerid').data("kendoComboBox").enable(false);
     $('#ddlIocodeid').data("kendoComboBox").enable(false);

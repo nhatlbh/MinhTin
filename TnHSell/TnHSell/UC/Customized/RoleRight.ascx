@@ -5,13 +5,21 @@
         var init = function () {
             dataview = $("input[name='dataview']");
             $("input[name='dataview'][value='3']").prop('checked', 'checked');
+            $("#chkEditInvoiceRight").prop('checked', false);
         }
         var setRights = function (rights) {
             $("#roleRight  input[value='" + rights[0] + "']").prop('checked', 'checked');
+            if (rights[1] == '4')//id quyền xóa sửa phiếu = 4
+            {
+                $('#chkEditInvoiceRight').prop('checked', true);
+            }
         }
         var getRights = function () {
             var result = [];
             result.push($("#roleRight input[name='dataview']:checked").val());
+            if ($('#chkEditInvoiceRight').prop('checked')) {
+                result.push('4')
+            }
             return result;
         }
         return {
@@ -46,4 +54,9 @@
             </div>
         </div>
     </div>
+</div>
+<div class="row">
+    <div class="col-md-4 no-margin">Xóa/Sửa phiếu bán hàng</div>
+    <div class="col-md-2">
+        <input type="checkbox" id="chkEditInvoiceRight" /></div>
 </div>

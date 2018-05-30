@@ -147,7 +147,7 @@ namespace TnHSell.Model
             }
             return "";
         }
-        public static void Return(SelReceiveproductContract receiveProductDTO, SelReceiveproductDetailContract receiveProductDetailDTO, SqlTransaction tran)
+        public static void ReceiveProduct(SelReceiveproductContract receiveProductDTO, SelReceiveproductDetailContract receiveProductDetailDTO, SqlTransaction tran)
         {
             try
             {
@@ -156,32 +156,7 @@ namespace TnHSell.Model
                 if (dtInvoice != null && dtInvoice.Rows.Count > 0)
                 {
                     string invoiceCode = dtInvoice.Rows[0]["Code"].ToString();
-                    string exportLogCond = "ExportCode='" + invoiceCode + "' AND ProductID=" + receiveProductDetailDTO.Productid;
-                    DataTable dtExportLog = productExportDT.GetByCond(exportLogCond, "", tran);
-                    if (dtExportLog != null && dtExportLog.Rows.Count > 0)
-                    {
-                        string importCode = dtExportLog.Rows[0]["ImportCode"].ToString();
-                        string storeInventCond = "ImportCode='" + importCode + "' AND StoreID=" + receiveProductDTO.Storeid + " AND ProductID=" + receiveProductDetailDTO.Productid;
-                        DataTable dtStoreInvent = productStoreDT.GetByCond(storeInventCond, "", tran);
-                        if (dtStoreInvent != null && dtStoreInvent.Rows.Count > 0)
-                        {
-                            productStoreDT.Update(new string[] { "Quantity" }, new string[] { "Quantity+" + receiveProductDetailDTO.Quantity }, storeInventCond, tran);
-                        }
-                        else
-                        {
-                            CatProductStoreContract productStoreDTO = new CatProductStoreContract();
-                            productStoreDTO.Importcode = importCode;
-                            productStoreDTO.Importdate = DateTime.Now.ToString("dd/MM/yyyy");
-                            productStoreDTO.Storeid = receiveProductDTO.Storeid;
-                            productStoreDTO.Productid = receiveProductDetailDTO.Productid;
-                            productStoreDTO.Inventory = receiveProductDetailDTO.Quantity;
-                            productStoreDTO.Quantity = receiveProductDetailDTO.Quantity;
-                            productStoreDTO.Price = dtExportLog.Rows[0]["ImportPrice"].ToString();
-                            productStoreDTO.Ordernum = "0";
-                            productStoreDT.Insert(productStoreDTO, tran);
-                        }
-                        productExportDT.Update(new string[] { "Quantity" }, new string[] { "Quantity-" + receiveProductDetailDTO.Quantity }, exportLogCond, tran);
-                    }
+                    returnStore(invoiceCode, (int)receiveProductDTO.Storeid, (int)receiveProductDetailDTO.Productid, receiveProductDetailDTO.Quantity, tran);
                 }
             }
             catch (Exception e)
@@ -189,6 +164,18 @@ namespace TnHSell.Model
                 throw e;
             }
         }
+        public static void ChangeInvoice(string invoiceCode, int storeId, int productId, string quantity, SqlTransaction tran)
+        {
+            try
+            {
+                returnStore(invoiceCode, storeId, productId, quantity, tran);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         public static string GetInventory(string storeId, string productId)
         {
             try
@@ -202,6 +189,36 @@ namespace TnHSell.Model
             {
                 ExceptionHandler.Log(e);
                 return "0";
+            }
+        }
+
+        static void returnStore(string invoiceCode, int storeId, int productId, string quantity, SqlTransaction tran)
+        {
+            string exportLogCond = "ExportCode='" + invoiceCode + "' AND ProductID=" + productId;
+            DataTable dtExportLog = productExportDT.GetByCond(exportLogCond, "", tran);
+            if (dtExportLog != null && dtExportLog.Rows.Count > 0)
+            {
+                string importCode = dtExportLog.Rows[0]["ImportCode"].ToString();
+                string storeInventCond = "ImportCode='" + importCode + "' AND StoreID=" + storeId + " AND ProductID=" + productId;
+                DataTable dtStoreInvent = productStoreDT.GetByCond(storeInventCond, "", tran);
+                if (dtStoreInvent != null && dtStoreInvent.Rows.Count > 0)
+                {
+                    productStoreDT.Update(new string[] { "Quantity" }, new string[] { "Quantity+" + quantity }, storeInventCond, tran);
+                }
+                else
+                {
+                    CatProductStoreContract productStoreDTO = new CatProductStoreContract();
+                    productStoreDTO.Importcode = importCode;
+                    productStoreDTO.Importdate = DateTime.Now.ToString("dd/MM/yyyy");
+                    productStoreDTO.Storeid = storeId;
+                    productStoreDTO.Productid = productId;
+                    productStoreDTO.Inventory = quantity;
+                    productStoreDTO.Quantity = quantity;
+                    productStoreDTO.Price = dtExportLog.Rows[0]["ImportPrice"].ToString();
+                    productStoreDTO.Ordernum = "0";
+                    productStoreDT.Insert(productStoreDTO, tran);
+                }
+                productExportDT.Update(new string[] { "Quantity" }, new string[] { "Quantity-" + quantity }, exportLogCond, tran);
             }
         }
     }

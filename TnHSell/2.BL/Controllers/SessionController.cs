@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Web.Http;
 using TnHSell.DT;
 using TnHSell.DTContract;
+using TnHSell.Model;
 using Util;
 
 namespace TnHSell.Controllers
@@ -36,10 +37,10 @@ namespace TnHSell.Controllers
             DataTable dtSession = sessionDT.GetByCond("SessionID='" + sessionKey + "'", " ID DESC");
             if (dtSession != null && dtSession.Rows.Count > 0)
             {
-                DataTable dtStaff = staffDT.GetByCond("UserID=" + dtSession.Rows[0][LoginSessionContract.Columns[(int)LoginSessionColumns.UserID]].ToString());
-            return Request.CreateResponse<string>(HttpStatusCode.OK, JsonConvert.SerializeObject(dtStaff));
+                // DataTable dtStaff = staffDT.GetByCond("UserID=" + dtSession.Rows[0][LoginSessionContract.Columns[(int)LoginSessionColumns.UserID]].ToString());
+                return Request.CreateResponse<string>(HttpStatusCode.OK, JsonConvert.SerializeObject(AuthModel.GetAuthInfo(sessionKey)));
             }
-            return Request.CreateResponse<string>(HttpStatusCode.OK,"{}");
+            return Request.CreateResponse<string>(HttpStatusCode.OK, "{}");
         }
         [Route("Session/RenderMenu")]
         [HttpGet, HttpPost]

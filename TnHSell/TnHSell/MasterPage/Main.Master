@@ -37,14 +37,19 @@
 <body>
     <script type="text/javascript">
         var staffInfo;
+        var userInfo;
         $(function () {
             var sessionKey = $('#hdfSessionKey').val();
             callService('Session/UserInfo?sessionKey=' + sessionKey, function (data) {
                 data = JSON.parse(data);
                 staffInfo = {
-                    Id: data[0].ID,
-                    Name: data[0].Name,
-                }
+                    Id: data.StaffId,
+                    Name: '',
+                };
+                userInfo = {
+                    id: data.UserId,
+                    rights: data.UserRightIds,
+                };
             })
         });
     </script>

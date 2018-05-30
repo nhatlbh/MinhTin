@@ -187,6 +187,7 @@ function getNumber(value) {
     return numeral(value).value();
 }
 
+
 function validateSession(sessionKey) {
     callService("Session/Validate?sessionKey=" + sessionKey, postValidateSession)
 }
